@@ -1,0 +1,11 @@
+.weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+.descriptionContainer{
+    display: flex;
+    flex-direction: column;
+}

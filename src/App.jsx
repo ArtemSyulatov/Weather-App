@@ -1,12 +1,11 @@
 import "./App.css";
-import Weather from "./components/Weather";
-
+import WeatherContainer from "./components/WeatherContainer.jsx"; 
 
 function App() {
  
   return (
     <> 
-    <Weather/>
+    <WeatherContainer/>
     </>
   );
 }
