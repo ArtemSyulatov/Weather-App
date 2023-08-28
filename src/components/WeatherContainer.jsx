@@ -5,7 +5,7 @@ import Weather from "./Weather";
 import Preloader from "./Preloader/Preloader.jsx";
 let apiKey = "aea320f01a6d10dfac6d72a7b68a42f0";
 const WeatherContainer = () => {
-  const [town, setTown] = useState({ town: "Екатеринбург" });
+  const [town, setTown] = useState({ town: "Екатеринбург",error:''});
   const [data, setData] = useState({});
   useEffect(() => {
     axios
@@ -19,6 +19,7 @@ const WeatherContainer = () => {
   if (!data.list) {
     return <Preloader />;
   } 
+  console.log(town)
   return (
     <div className="">
       <p>Прогноз погоды на 24 часа</p>
@@ -32,11 +33,9 @@ const WeatherContainer = () => {
               )
               .then((response) => {
                 setData(response.data);
-                console.log(response.data);
               })
               .catch((error) => {
-                console.log(error);
-                alert('Неправильно указан город') 
+                setTown({...town,error:'Неправильно указан город!'})
               });
           }
         }}
@@ -44,7 +43,7 @@ const WeatherContainer = () => {
         className="city"
         value={town.town}
       />
-      <div>{data.city.name}</div> 
+      <div>{town.error ? town.error : data.city.name}</div> 
       <Weather data={data.list[0]}  />
       <Weather data={data.list[1]} />
       <Weather data={data.list[2]} />
