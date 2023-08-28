@@ -34,7 +34,7 @@ const WeatherContainer = () => {
               .then((response) => {
                 setData(response.data);
               })
-              .catch((error) => {
+              .catch(() => {
                 setTown({...town,error:'Неправильно указан город!'})
               });
           }
@@ -44,7 +44,7 @@ const WeatherContainer = () => {
         value={town.town}
       />
       <div>{town.error ? town.error : data.city.name}</div> 
-      <Weather data={data.list[0]}  />
+      <Weather data={data.list[0]} />
       <Weather data={data.list[1]} />
       <Weather data={data.list[2]} />
       <Weather data={data.list[3]} />
