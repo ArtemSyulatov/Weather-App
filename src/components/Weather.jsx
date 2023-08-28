@@ -1,28 +1,26 @@
 import React from "react";
 import classes from './Weather.module.css' 
 const Weather = (props) => { 
-  console.log(props)
-
+  console.log(props) 
   return (
     <div className={classes.weather}>
-   <div>{props.town}</div>
-    <p>{}</p> 
+    <p>{props.data.dt_txt}</p> 
     <i className="weather-icon owf">
-      Тут будет иконка из fontawesome {}
+    <img src={`https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}></img>
     </i>
     <div className="weather-error"></div>
     <div className={classes.descriptionContainer}>
-      <span className="temperature"> Температура {} { }</span>
+      <span className="temperature"> Температура {Math.trunc(props.data.main.temp)}°C{ }</span>
       <span className="weather-description">
-        Сейчас {''}{}
+       {props.data.weather[0].description[0].toUpperCase() + props.data.weather[0].description.slice(1)}
       </span>
     </div>
     <div className="wind"> 
-      { + ' Метров в секунду'}
+      Ветер {Math.trunc(props.data.wind.speed) + ' м/c'}
     </div>
-    <div className="humidity">{} Влажность</div>
+    <div className="humidity">{props.data.main.humidity} Влажность</div>
   </div>
   );
 };
 
-export default Weather;
+export default Weather; 
