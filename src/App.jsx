@@ -5,7 +5,7 @@ import WeatherContainer from "./components/WeatherContainer.jsx";
 function App() {
   const appJs = useRef();
   const setBackground = (weather) => { 
-    appJs.current.style.backgroundImage = `url(./src/assets/${weather}.png)`
+    appJs.current.style.backgroundImage = `./src/assets/${weather}.png`
   };
   return (
     <div className="bg" ref={appJs}>
