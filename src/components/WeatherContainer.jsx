@@ -16,7 +16,7 @@ const WeatherContainer = (props) => {
       )
       .then((response) => {
         setData(response.data);
-        props.setBg(response.data.list[0].weather[0].main) 
+        props.setBg(response.data?.list[0]?.weather[0]?.main) 
       });
   }, []);
   if (!data.list) {

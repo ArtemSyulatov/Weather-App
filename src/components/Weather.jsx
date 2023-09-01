@@ -1,7 +1,6 @@
 import React from "react";
 import classes from './Weather.module.css' 
 const Weather = (props) => { 
-  // console.log(props) 
   return (
     <div className={classes.weather}>
     <p>{props.data.dt_txt}</p> 
@@ -21,5 +20,3 @@ const Weather = (props) => {
 };
 
 export default Weather; 
-
-//min-width: 200px; 
