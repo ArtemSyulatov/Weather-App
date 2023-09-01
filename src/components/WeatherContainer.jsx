@@ -53,7 +53,7 @@ const WeatherContainer = (props) => {
       <div className={classes.town}>{town.error ? town.error : data.city.name}</div>
       <div className={classes.main}>
       {data.list.map((element,index) => { 
-        return <Weather key = {index} id={`${index + 1}`} data={element} />;
+        return <Weather key = {index} data={element} />;
       })}
       </div>
     </div>
