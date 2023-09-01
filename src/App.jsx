@@ -6,7 +6,7 @@ function App() {
   const appJs = useRef();
   const setBackground = (weather) => { 
     appJs.current.style.backgroundImage = `url(./src/assets/${weather}.png)`
-  }; 
+  };
   return (
     <div className="bg" ref={appJs}>
       <WeatherContainer setBg = {setBackground}/>
