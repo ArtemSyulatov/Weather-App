@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import React,{useRef} from "react";
 import "./App.css";
-import WeatherContainer from "./components/WeatherContainer.jsx"; 
+import WeatherContainer from "./components/WeatherContainer.jsx";
+
 
 function App() {
   const imgBg= useRef();
