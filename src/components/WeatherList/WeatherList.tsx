@@ -1,24 +1,25 @@
-import React, {FC, useCallback, useEffect, useState} from "react";
+import React, {ChangeEvent, FC, useCallback, useEffect, useState} from "react";
 import WeatherCard from "../Weather/WeatherCard";
 import Preloader from "../Preloader/Preloader.tsx";
 import classes from './WeatherList.module.css'
 import {getWeather} from "../../service/WeatherService.ts";
 
 interface WeatherContainerProps {
-    setBg: () => void;
+    setBg: (string: string) => void;
 }
 
-const WeatherList: FC = (props: WeatherContainerProps) => {
+const WeatherList = (props: WeatherContainerProps) => {
     const [town, setTown] = useState({town: "Екатеринбург", error: ""});
     const [data, setData] = useState({
-        list: false,
-        city: undefined
+        list: [],
+        city: {name: ''},
     });
     useEffect(() => {
         getWeather(setData, props, setTown, town.town).then(r => r)
     }, []);
-    const onInputChange = useCallback((e) => setTown({error: "", town: e.target.value}), [])
-    const onInputKeyDown = useCallback((e) => {
+    console.log(data.city)
+    const onInputChange = useCallback((e:ChangeEvent<HTMLInputElement>) => setTown({error: "", town: e.target.value}), [])
+    const onInputKeyDown = useCallback((e:React.KeyboardEvent<HTMLInputElement>) => {
         if (e.code === "Enter") {
             getWeather(setData, props, setTown, town.town).then(r => r);
         }
@@ -28,7 +29,7 @@ const WeatherList: FC = (props: WeatherContainerProps) => {
     }
     return (
         <div>
-            <p className={classes.prognoz}>Прогноз погоды на 24 часа</p>
+            <p className={classes.foreCast}>Прогноз погоды на 24 часа</p>
             <input
                 onChange={onInputChange}
                 onKeyDown={onInputKeyDown}

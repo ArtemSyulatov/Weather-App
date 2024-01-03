@@ -5,7 +5,7 @@ import WeatherList from "./components/WeatherList/WeatherList";
 
 function App() {
     const imgBg = useRef() as RefObject<HTMLDivElement> | null;
-    const setBackground = (weather: string) => {
+    const setBackground = (weather: string):void => {
         if(imgBg?.current){
             imgBg.current.style.backgroundImage = `url(./${weather}.png)`
         }
@@ -16,5 +16,4 @@ function App() {
         </div>
     );
 }
-
-export default App; 
+export default App;
