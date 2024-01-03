@@ -8,3 +8,5 @@ const Preloader = () => {
     </div>);
 };
 export default Preloader;
+
+// TODO поменять прелоадер

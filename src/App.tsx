@@ -1,16 +1,18 @@
-import React, {useRef} from "react";
+import React, {RefObject, useRef} from "react";
 import "./styles/App.css";
-import WeatherContainer from "./components/WeatherContainer";
+import WeatherList from "./components/WeatherList/WeatherList";
 
 
 function App() {
-    const imgBg = useRef();
-    const setBackground = (weather) => {
-        imgBg.current.style.backgroundImage = `url(./${weather}.png)`
+    const imgBg = useRef() as RefObject<HTMLDivElement> | null;
+    const setBackground = (weather: string) => {
+        if(imgBg?.current){
+            imgBg.current.style.backgroundImage = `url(./${weather}.png)`
+        }
     };
     return (
         <div className="bg" ref={imgBg}>
-            <WeatherContainer setBg={setBackground}/>
+            <WeatherList setBg={setBackground}/>
         </div>
     );
 }
