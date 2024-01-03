@@ -1,12 +1,12 @@
 #root {
-  max-width: 1280px; 
-  text-align: center;
-} 
+    max-width: 1280px;
+    text-align: center;
+}
+
 .bg {
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }

@@ -1,4 +1,4 @@
-import {apiKey, PAGE_SIZE} from "../constants/conststants";
+import {apiKey, PAGE_SIZE} from "../consts/consts";
 import axios, {AxiosResponse} from "axios";
 import {Dispatch, SetStateAction} from "react";
 
@@ -9,10 +9,11 @@ interface Props {
 export async function getWeather(setData: Dispatch<SetStateAction<{ list: never[]; city: { name: string; }; }>>, props: Props, setTown: Dispatch<SetStateAction<{ town: string; error: string; }>>, town: string) {
     await axios
         .get(
-            `https://api.openweathermap.org/data/2.5/forecast?q=${town}&cnt=${PAGE_SIZE}&lang=ru&appid=${apiKey}&units=metric`
+            `https://api.openweathermap.org/data/2.5/forecast?q=${town}&cnt=${PAGE_SIZE}&lang=en&appid=${apiKey}&units=metric`
         )
         .then((response: AxiosResponse) => {
             setData(response.data);
+            console.log(response.data)
             props.setBg(response.data.list[0].weather[0].main)
         })
         .catch(() => {

@@ -1,29 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,700;1,400&display=swap");
 
 .main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    margin-top: 150px;
+    flex-direction: column;
+    justify-content: center;
 }
 .town {
   margin-bottom: 70px;
   margin-top: 20px;
-  font-size: 17pt;
+  font-size: 20pt;
   font-family: "Poppins", sans-serif;
-  font-family: "Outfit", sans-serif;
-  color: aliceblue;
-  opacity: 0.92;
+  color: #ffffff;
 }
 .foreCast{
-    color:aliceblue;
+    color: #ffffff;
     font-family: "Poppins", sans-serif;
-    font-family: "Outfit", sans-serif;
     font-size: x-large;
 }
 .input{
     padding:10px;
     border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-    border-radius:15px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,1);
+    border-radius:35px;
+}
+.time{
+    color:white;
+    font-family: "Poppins", sans-serif;
+    font-size: 30pt;
+}
+.date{
+    color:white;
+    font-family: "Poppins", sans-serif;
+    font-size: 20pt;
 }

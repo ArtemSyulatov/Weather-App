@@ -5,8 +5,8 @@
     align-items: center;
     flex-wrap: wrap;
     font-family: 'Outfit', sans-serif;
-    color:aliceblue;
-    opacity: 0.9;
+    color: #ffffff;
+    max-width: 100px;
 }
 .descriptionContainer{
     display: flex;
@@ -14,4 +14,7 @@
 }
 .weatherDescription{
     min-width: 200px;
+}
+.humidity{
+    width: 150px;
 }
